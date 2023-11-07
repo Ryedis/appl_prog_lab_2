@@ -7,6 +7,9 @@ from script_1 import create_csv_file
 def create_dir(dir_name):
     if not os.path.isdir(dir_name):
         os.mkdir(dir_name)
+
+def clone_dir(dir_name):
+    create_dir(dir_name)
     for class_name in os.listdir('dataset'):
         list_name = os.listdir(os.path.join('dataset', (class_name)))
         for file_name in list_name:
@@ -25,7 +28,7 @@ def write_in_csv(name_csv, dir_name):
 
 
 def main():
-    create_dir('dataset_clone')
+    clone_dir('dataset_clone')
     create_csv_file('annotation_2.csv')
     write_in_csv('annotation_2.csv', 'dataset_clone')
 
