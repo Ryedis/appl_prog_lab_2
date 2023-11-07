@@ -8,7 +8,7 @@ def create_dir(dir_name):
     if not os.path.isdir(dir_name):
         os.mkdir(dir_name)
 
-def clone_dir(dir_name):
+def copy_dir(dir_name):
     create_dir(dir_name)
     for class_name in os.listdir('dataset'):
         list_name = os.listdir(os.path.join('dataset', (class_name)))
@@ -24,13 +24,14 @@ def write_in_csv(name_csv, dir_name):
     with open(name_csv, 'a', newline='') as csv_file:
         writer = csv.writer(csv_file)
         for name in file_name:
-            writer.writerow([os.path.join(absolute_path, name), os.path.join(relative_path, name), name.split("_")[0]])
+            writer.writerow([os.path.join(absolute_path, name),
+                             os.path.join(relative_path, name), name.split("_")[0]])
 
 
 def main():
-    clone_dir('dataset_clone')
+    copy_dir('dataset_copy_1')
     create_csv_file('annotation_2.csv')
-    write_in_csv('annotation_2.csv', 'dataset_clone')
+    write_in_csv('annotation_2.csv', 'dataset_copy_1')
 
 if __name__ == "__main__":
     main()
