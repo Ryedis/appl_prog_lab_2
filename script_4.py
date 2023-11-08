@@ -1,6 +1,17 @@
 import os
+from typing import Generator, Optional
 
-def get_elements(class_name):
+def get_elements(class_name: str) -> Generator[Optional[str], None, None]:
+    """
+    Get file elements in the specified class directory.
+
+    Args:
+        class_name (str): The name of the class.
+
+    Yields:
+        Optional[str]: The path of the file element or None.
+
+    """
     path = os.path.join("dataset", class_name)
     name_list = os.listdir(path)
     name_list.append(None)
@@ -10,7 +21,7 @@ def get_elements(class_name):
         else:
             yield None
 
-def main():
+def main() -> None :
     print(*get_elements('tiger'))
 
 if __name__ == "__main__":

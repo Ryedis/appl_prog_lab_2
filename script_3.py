@@ -6,7 +6,8 @@ from random import sample
 from script_1 import create_csv_file
 from script_2 import create_dir
 
-def copy_dir(name_dir, name_csv):
+def copy_dir(name_dir: str, name_csv: str) -> None:
+    """Copy a directory and create a CSV file."""
     list_number = sample(list(range(10001)), 5005)
     create_dir(name_dir)
     absolute_path = os.path.abspath(name_dir)
@@ -24,7 +25,7 @@ def copy_dir(name_dir, name_csv):
                                  os.path.join(relative_path, random_name + '.jpeg'), class_name])
                 counter+=1
 
-def main():
+def main() -> None:
     create_csv_file('annotation_3.csv')
     copy_dir('dataset_copy_2', 'annotation_3.csv')
 
