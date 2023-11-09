@@ -1,6 +1,7 @@
 import os
 import csv
 
+
 class IteratorDataset:
     def __init__(self, class_name: str) -> None:
         """
@@ -13,7 +14,8 @@ class IteratorDataset:
         self.len = len(self.file_names)
         self.class_name = class_name
         self.counter = 0
-        
+
+
     def __next__(self) -> str:
         """
         Returns the next file path in the dataset.
@@ -29,7 +31,8 @@ class IteratorDataset:
             return os.path.join(self.class_name, self.file_names[self.counter-1])
         else:
             raise StopIteration
-        
+
+
 class IteratorCopyDataset:
     def __init__(self, class_name: str, dir_name: str) -> None:
         """
@@ -47,7 +50,8 @@ class IteratorCopyDataset:
         self.len = len(self.file_names)
         self.class_name = class_name
         self.counter = 0        
-        
+
+
     def __next__(self) -> str:
         """
         Returns the next file path in the copied dataset.
@@ -64,10 +68,12 @@ class IteratorCopyDataset:
         else:
             raise StopIteration
 
+
 def main() -> None :
     a = IteratorDataset("tiger")
     for i in range(1000):
         print(next(a))
+
 
 if __name__ == "__main__":
     main()

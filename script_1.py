@@ -1,6 +1,7 @@
 import os
 import csv
 
+
 def create_csv_file(name_file: str) -> None:
     """
     Create a CSV file with the given name.
@@ -11,6 +12,7 @@ def create_csv_file(name_file: str) -> None:
     with open(name_file, 'w') as csv_file:
         writer = csv.writer(csv_file)
         writer.writerow(["absolute_path", "relative_path", "class_label"])
+
 
 def write_in_csv(name_csv: str, class_label: str) -> None:
     """
@@ -28,10 +30,12 @@ def write_in_csv(name_csv: str, class_label: str) -> None:
         for name in name_file:
             writer.writerow([os.path.join(absolute_path, class_label, name), os.path.join(relative_path, class_label, name), class_label])
 
+
 def main() -> None:
     create_csv_file('annotation_1.csv')
     write_in_csv('annotation_1.csv', 'tiger')
     write_in_csv('annotation_1.csv', 'leopard')
+
 
 if __name__ == "__main__":
     main()

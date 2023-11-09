@@ -4,6 +4,7 @@ import csv
 
 from script_1 import create_csv_file
 
+
 def create_dir(dir_name: str) -> None:
     """
     Create a directory if it doesn't exist.
@@ -13,6 +14,7 @@ def create_dir(dir_name: str) -> None:
     """
     if not os.path.isdir(dir_name):
         os.mkdir(dir_name)
+
 
 def copy_dir(dir_name: str) -> None:
     """
@@ -29,6 +31,7 @@ def copy_dir(dir_name: str) -> None:
                 os.path.join(os.path.join('dataset', class_name), file_name),
                 os.path.join(dir_name, f"{class_name}_{file_name}")
             )
+
 
 def write_in_csv(name_csv: str, dir_name: str) -> None:
     """
@@ -50,10 +53,12 @@ def write_in_csv(name_csv: str, dir_name: str) -> None:
                 name.split("_")[0]
             ])
 
+
 def main() -> None:
     copy_dir('dataset_copy_1')
     create_csv_file('annotation_2.csv')
     write_in_csv('annotation_2.csv', 'dataset_copy_1')
+
 
 if __name__ == "__main__":
     main()

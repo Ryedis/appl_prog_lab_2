@@ -1,6 +1,7 @@
 import os
 from typing import Generator, Optional
 
+
 def get_elements(class_name: str) -> Generator[Optional[str], None, None]:
     """
     Get file elements in the specified class directory.
@@ -19,10 +20,12 @@ def get_elements(class_name: str) -> Generator[Optional[str], None, None]:
         if name_list[i] is not None:
             yield os.path.join(class_name, name_list[i])
         else:
-            yield None
+            return None
+
 
 def main() -> None :
     print(*get_elements('tiger'))
+
 
 if __name__ == "__main__":
     main()
