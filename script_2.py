@@ -55,6 +55,14 @@ def write_in_csv(name_csv: str, dir_name: str) -> None:
 
 
 def main() -> None:
+    """
+    This function copies a directory, creates a CSV file,
+    and writes the copied directory name in the CSV file.
+    Args:
+        None
+    Returns:
+        None
+    """
     copy_dir('dataset_copy_1')
     create_csv_file('annotation_2.csv')
     write_in_csv('annotation_2.csv', 'dataset_copy_1')

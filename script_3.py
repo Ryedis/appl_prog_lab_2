@@ -8,7 +8,17 @@ from script_2 import create_dir
 
 
 def copy_dir(name_dir: str, name_csv: str) -> None:
-    """Copy a directory and create a CSV file."""
+    """
+    Copies files from the 'dataset' directory to the directory 'name_dir',
+    and writes file information to a CSV file 'name_csv'.
+
+    Args:
+        name_dir (str): The name of the directory where the files will be copied.
+        name_csv (str): The name of the CSV file where file information will be written.
+
+    Returns:
+        None
+    """
     list_number = sample(list(range(10001)), 5005)
     create_dir(name_dir)
     absolute_path = os.path.abspath(name_dir)
@@ -28,6 +38,13 @@ def copy_dir(name_dir: str, name_csv: str) -> None:
 
 
 def main() -> None:
+    """
+    Creates a CSV file and copies files to a directory.
+    Args:
+        None
+    Returns:
+        None
+    """
     create_csv_file('annotation_3.csv')
     copy_dir('dataset_copy_2', 'annotation_3.csv')
 

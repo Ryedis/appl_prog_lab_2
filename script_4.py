@@ -1,8 +1,8 @@
 import os
-from typing import Generator, Optional
+from typing import Optional
 
 
-def get_elements(class_name: str) -> Generator[Optional[str], None, None]:
+def get_elements(class_name: str) -> Optional[str]:
     """
     Get file elements in the specified class directory.
 
@@ -24,6 +24,13 @@ def get_elements(class_name: str) -> Generator[Optional[str], None, None]:
 
 
 def main() -> None :
+    """
+    Prints the elements by class_label "tiger"
+    Args:
+        None
+    Returns:
+        None
+    """
     print(*get_elements('tiger'))
 
 

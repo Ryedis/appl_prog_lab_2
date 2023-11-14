@@ -32,6 +32,13 @@ def write_in_csv(name_csv: str, class_label: str) -> None:
 
 
 def main() -> None:
+    """
+    This function creates a CSV file and writes 'tiger' and 'leopard' in it.
+    Args:
+        None
+    Returns:
+        None
+    """
     create_csv_file('annotation_1.csv')
     write_in_csv('annotation_1.csv', 'tiger')
     write_in_csv('annotation_1.csv', 'leopard')
