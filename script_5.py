@@ -69,29 +69,29 @@ class IteratorCopyDataset:
             raise StopIteration
 
 
-def print_iterator(name) -> None:
+def print_iterator(name: str, count: int) -> None:
     """
-    Prints the next 2000 elements from an IteratorDataset.
+    Prints the next elements from an IteratorDataset.
 
     Args:
         name (str): The name of the IteratorDataset.
-
+        count (int): count of elements
     Returns:
         None
     """
     a = IteratorDataset(name)
-    for i in range(2000):
+    for i in range(count):
         print(next(a))
 
 def main() -> None :
     """
-    Calls the print_iterator function with the "tiger" name.
+    Calls the print_iterator function with name.
     Args:
         None
     Returns:
         None
     """
-    print_iterator("tiger")
+    print_iterator("tiger", 2000)
 
 
 if __name__ == "__main__":
